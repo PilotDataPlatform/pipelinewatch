@@ -1,0 +1,8 @@
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "6063:6063"
+    volumes:
+      - "/data/storage:/data/storage"
