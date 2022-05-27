@@ -1,14 +1,16 @@
+# Folders
 .git
+.venv
+.env
+venv
+env
+kubernetes
+
+# Files
+.DS_Store
+.env.local
 .gitignore
 .gitlab-ci*
 gitlab-ci*
 Dockerfile*
-kubernetes
 Jenkinsfile
-
-# Misc
-.DS_Store
-.env.local
-
-venv
-env

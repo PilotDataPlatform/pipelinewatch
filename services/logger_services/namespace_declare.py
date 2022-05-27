@@ -1,1 +1,0 @@
-service_namespace = "pipelinewatch"
