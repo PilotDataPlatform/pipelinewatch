@@ -53,15 +53,14 @@ class Settings(BaseSettings):
 
     port: int = 6063
     host: str = '0.0.0.0'
-    env: str = 'test'
 
-    DATA_OPS_UTIL: str = ''
-    NEO4J_SERVICE: str = ''
+    DATA_OPS_UTIL: str
+    METADATA_SERVICE: str
 
     K8S_NAMESPACE: str = 'greenroom'
 
-    GREEN_ZONE_LABEL: str
-    CORE_ZONE_LABEL: str
+    GREEN_ZONE_LABEL: str = 'Greenroom'
+    CORE_ZONE_LABEL: str = 'Core'
 
     class Config:
         env_file = '.env'
@@ -70,7 +69,7 @@ class Settings(BaseSettings):
 
         @classmethod
         def customise_sources(cls, init_settings, env_settings, file_secret_settings):
-            return env_settings, load_vault_settings, init_settings, file_secret_settings
+            return env_settings, init_settings, load_vault_settings, file_secret_settings
 
 
 @lru_cache(1)
