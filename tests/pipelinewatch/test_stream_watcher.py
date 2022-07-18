@@ -16,6 +16,7 @@
 from unittest.mock import MagicMock
 
 import pytest
+import pdb
 from kubernetes.client import BatchV1Api
 from kubernetes.client import V1Job
 from kubernetes.client import V1JobSpec
@@ -44,7 +45,7 @@ class IsInstance:
 @pytest.fixture
 def settings(httpserver) -> Settings:
     url = httpserver.url_for('/')
-    yield Settings(DATA_OPS_UTIL=url, METADATA_SERVICE=url)
+    yield Settings(DATAOPS_SERVICE=url, METADATA_SERVICE=url)
 
 
 @pytest.fixture
@@ -85,6 +86,7 @@ class TestStreamWatcher:
     def test_watch_callback_triggers_fail_handlers_and_updates_file_operation_status(
         self, pipeline, expected_zone, stream_watcher, httpserver, fake, mocker
     ):
+        # pdb.set_trace()
         resource_id = fake.uuid4()
         session_id = fake.uuid4()
         job_id = fake.uuid4()
