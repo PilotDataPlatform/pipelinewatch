@@ -83,7 +83,7 @@ class FailHandler:
         self.settings = settings
 
         self.metadata_service_endpoint_v1 = f'{settings.METADATA_SERVICE}/v1'
-        self.data_ops_service_endpoint_v1 = f'{settings.DATA_OPS_UTIL}/v1'
+        self.data_ops_service_endpoint_v1 = f'{settings.DATAOPS_SERVICE}/v1'
 
         self.annotations = annotations
         self.what = what

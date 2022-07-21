@@ -51,10 +51,7 @@ def load_vault_settings(settings: BaseSettings) -> Dict[str, Any]:
 class Settings(BaseSettings):
     """Store service configuration settings."""
 
-    port: int = 6063
-    host: str = '0.0.0.0'
-
-    DATA_OPS_UTIL: str
+    DATAOPS_SERVICE: str
     METADATA_SERVICE: str
 
     K8S_NAMESPACE: str = 'greenroom'

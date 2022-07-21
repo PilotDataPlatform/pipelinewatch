@@ -44,7 +44,7 @@ class IsInstance:
 @pytest.fixture
 def settings(httpserver) -> Settings:
     url = httpserver.url_for('/')
-    yield Settings(DATA_OPS_UTIL=url, METADATA_SERVICE=url)
+    yield Settings(DATAOPS_SERVICE=url, METADATA_SERVICE=url)
 
 
 @pytest.fixture
